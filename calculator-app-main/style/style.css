@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: hsl(222, 26%, 31%);
+    padding: 50px 0 50px 0;    
+}
+header > h4{
+    color: white;
+}
+body,button,input{
+    font-family: 'Spartan', sans-serif;
+}
+.container{
+    margin: auto;
+    max-width: 400px;
+    
+}
+input::placeholder,input,button{
+    outline: none;
+    border: none;
+}
+button{
+    cursor: pointer;
+}
+input[type="text"], .key button,.key{
+    border-radius: 5px;
+}
+input[type="text"]{
+    width: 100%;
+    background: hsl(224, 36%, 15%);
+    padding: 20px;
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: white;
+}
+body .key{
+    background: hsl(223, 31%, 20%);
+}
+.key{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+                         'button button button button'
+                         'button button button button'
+                         'button button button button'
+                         'button button button button'
+                         'reset reset submit submit';
+    gap: 20px;
+    padding: 20px;
+}
+.key button{
+    padding: 15px 30px;
+    background: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+    box-shadow: 0 3px 0 hsl(28, 16%, 65%);
+}
+button[value="="]{
+    grid-area: submit;
+    background: hsl(6, 63%, 50%);
+    color: white;
+    box-shadow: 0 3px 0 hsl(6, 70%, 34%);
+}
+button[value="reset"]{
+    grid-area: reset;
+}
+button[value="del"],button[value="reset"]{
+    background: hsl(225, 21%, 49%);
+    color: white;
+    box-shadow: 0 3px 0 hsl(224, 28%, 35%);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.theme2{
+    background: hsl(0, 0%, 90%);
+}
+.theme3{
+    background: hsl(268, 75%, 9%);
+}
+.container form.calc button.clicked {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+/* Toggle */
+.toggle{
+    display: flex;
+    align-items: flex-end;
+    width: 30%;
+    /* border: 1px solid red; */
+    color: white;
+    justify-content: space-between;
+}
+.toggle p{
+    font-size: .6em;
+}
+.toggle-animation{
+    border-radius: 50px;
+    padding: 3px 3px 3px 4px;
+    background: hsl(223, 31%, 20%);
+}
+.ball{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: hsl(6, 63%, 50%);
+    transition: .3s;
+}
+.togglecon{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    width: 50%;
+}
+.formtoggle{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid green; */
+    width: 80%;
+    align-self: center;
+    margin-bottom: 5px;
+}
+.formtoggle button{
+    background: none;
+    color: white;
+    font-size: .6em;
+}
+
+/* theme change */
+.theme2 .key,.theme2 .toggle-animation{
+    background: hsl(0, 5%, 81%);
+}
+.theme2 input[type="text"]{
+    background: hsl(0, 0%, 93%);
+}
+.theme2 .key button[value="del"],.theme2 .key button[value="reset"]{
+    background: hsl(185, 42%, 37%);
+    box-shadow: 0 3px 0 hsl(185, 58%, 25%);
+}
+.theme2 .key button[value="="]{
+    background: hsl(25, 98%, 40%);
+    box-shadow: 0 3px 0 hsl(25, 99%, 27%);
+}
+.theme2 .ball{
+    background: hsl(25, 98%, 40%);
+}
+.theme2 .key button{
+    background: hsl(45, 7%, 89%);
+    box-shadow: 0 3px 0 hsl(35, 11%, 61%);
+}
+.theme2 h4,.theme2 input,.theme2 .toggle p,.theme2 .formtoggle button {
+    color: hsl(60, 10%, 19%);
+}
+
+/* theme 3 */
+.theme3 .key,.theme3 .toggle-animation,.theme3 input[type="text"]{
+    background: hsl(268, 71%, 12%);
+}
+.theme3 .key button[value="del"],.theme3 .key button[value="reset"]{
+    background: hsl(281, 89%, 26%);
+    box-shadow: 0 3px 0 hsl(285, 91%, 52%);
+}
+.theme3 .key button[value="="]{
+    background: hsl(176, 100%, 44%);
+    box-shadow: 0 3px 0 hsl(177, 92%, 70%);
+    color: hsl(198, 20%, 13%);
+}
+.theme3 .ball{
+    background: hsl(176, 100%, 44%);
+}
+.theme3 .key button{
+    background: hsl(268, 47%, 21%);
+    box-shadow: 0 3px 0 hsl(290, 70%, 36%);
+    color: hsl(52, 100%, 62%);
+}
+.theme3 h4,.theme3 input,.theme3 .toggle p,.theme3 .formtoggle button {
+    color: hsl(52, 100%, 62%);
+}
+
+
+
+/* mobile breakpoint */
+@media(max-width: 450px){
+    body{
+        padding: 30px 20px;
+    }
+    .key button{
+        padding: 10px;
+    }
+    .key{
+        gap: 15px;
+    }
+}
