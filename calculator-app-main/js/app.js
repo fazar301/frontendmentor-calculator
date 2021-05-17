@@ -1,11 +1,11 @@
-const form = document.querySelector('form.calc');
+const forms = document.querySelectorAll('form');
 const input = document.querySelector('input[type="text"]')
 const buttons = document.querySelectorAll('.key button')
 
 const ball = document.querySelector('.ball')
 const btnToggle = document.querySelectorAll('.formtoggle button');
 
-form.addEventListener('submit',e => e.preventDefault());
+forms.forEach(e => e.addEventListener('submit', (el) => el.preventDefault()))
 
 // delete function
 const popStr = (str) => str.substr(0, str.length -1);
